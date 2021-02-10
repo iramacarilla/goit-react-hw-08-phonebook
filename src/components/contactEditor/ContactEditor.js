@@ -10,6 +10,7 @@ import Notification from '../../components/notification/Notification'
 import Logo from '../logo/Logo'
 import Filter from '../filter/Filter'
 import ContactList from '../contactList/ContactList'
+import UserMenu from '../../pages/userMenu/UserMenu'
 
 
 const initialState = {
@@ -59,6 +60,7 @@ const initialState = {
     render() {
         return (
           <>
+          
           <Notification isVisible={this.state.isVisible} message = {this.state.message}/>
           <CSSTransition
            in={true}
@@ -91,7 +93,7 @@ const mapPropsToState = state => ({
   items: contactsSelectors.getItems(state),
   isLoadingContacts: contactsSelectors.getLoading(state),
   error: state.contacts.error,
-  isAuh: authSelectores.isAuth(state)
+  isAuth: authSelectores.isAuth(state)
 })
 
 const mapDispatchToProps = {

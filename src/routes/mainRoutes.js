@@ -7,7 +7,7 @@ export const mainRoutes = [
         exact: true,
         component: lazy(() => 
         import('../pages/home/Home')),
-        isPrivat: false,
+        isPrivate: false,
         restricted: false
     },
     {
@@ -16,7 +16,7 @@ export const mainRoutes = [
         exact: true,
         component: lazy(() => 
         import('../pages/login/Login')),
-        isPrivat: false,
+        isPrivate: false,
         restricted: true
     },
     {
@@ -25,7 +25,7 @@ export const mainRoutes = [
         exact: true,
         component: lazy(() => 
         import('../pages/login/Login')),
-        isPrivat: false,
+        isPrivate: false,
         restricted: true
     },
     {
@@ -34,7 +34,7 @@ export const mainRoutes = [
         exact: true,
         component: lazy(() => 
         import('../pages/phoneBook/PhoneBook')),
-        isPrivat: true,
+        isPrivate: true,
         restricted: false
     },
 ]

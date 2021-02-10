@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import authOperation from '../../redux/auth/authOperation'
+import styles from './Login.module.css'
 
 
 export class Login extends Component {
@@ -22,14 +23,13 @@ export class Login extends Component {
     }
     render() {
         return (
-            <div>
-                <form onSubmit={this.onHandleSubmit}>
-                <label > Email
-               <input type='email' placeholder = 'Enter your email'  name='email' value={this.state.email}  onChange={this.onHandelChange}/>
-               </label>
-               <label > Password
-               <input type='text' name='password' placeholder = 'Enter your password' value={this.state.password}  onChange={this.onHandelChange}/> 
-               </label>
+            <div className={styles.singFragment} >
+                <form className={styles.singForm} onSubmit={this.onHandleSubmit}>
+              <p> Name </p>
+               <input className={styles.singInput} type='email' placeholder = 'Enter your email'  name='email' value={this.state.email}  onChange={this.onHandelChange}/>
+               <p> Password </p>
+               <input className={styles.singInput} type='text' name='password' placeholder = 'Enter your password' value={this.state.password}  onChange={this.onHandelChange}/> 
+              
                <button type='submit'>{this.props.location.pathname==='/login' ? 'Log in' : 'Sing up'}</button> 
                </form>
             </div>

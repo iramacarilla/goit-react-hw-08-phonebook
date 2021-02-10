@@ -13,7 +13,7 @@ import authAction from './authAction'
       dispatch(authAction.registerFailure(error));
     } 
   };*/
-  const key = 'AIzaSyDiYLzF9CroFfRhDHtRDSHha9EOgP30EsQ'
+  
 const registerOperation = userData => dispatch => {
     dispatch( authAction.registerRequest())
     axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDiYLzF9CroFfRhDHtRDSHha9EOgP30EsQ', userData)

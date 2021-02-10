@@ -1,0 +1,17 @@
+.navMenu {
+    list-style: none;
+    display: flex;
+}
+.listItem  {
+    margin-right: 15px;
+    
+}
+.link  {
+    text-decoration: none;
+    color: bisque;
+    font-size: 18px;
+    font-weight: 500;
+}
+.activeLink {
+    color: indianred;
+}

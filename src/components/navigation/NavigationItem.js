@@ -2,43 +2,44 @@ import React from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import authSelectores from '../../redux/auth/authSelectores'
+import styles from './Navigation.module.css'
 
 const NavigationItem = ({ isAuth, path, name, exact, isPrivate, restricted }) => {
-    console.log(isAuth);
+
     return (
       
     <>
       {!isPrivate && !restricted && (
-        <li className='listItem' key={path}>
+        <li className={styles.listItem} key={path}>
           <NavLink
             to={path}
             exact={exact}
-            className='link'
-            activeClassName='activeLink'>
+            className={styles.link}
+            activeClassName={styles.activeLink}>
             {name}
           </NavLink>
         </li>
       )}
 
       {isAuth && isPrivate && !restricted && (
-        <li className='listItem' key={path}>
+        <li className={styles.listItem} key={path}>
           <NavLink
             to={path}
             exact={exact}
-            className='link'
-            activeClassName='activeLink'>
+            className={styles.link}
+            activeClassName={styles.activeLink}>
             {name}
           </NavLink>
         </li>
       )}
 
       {!isAuth && !isPrivate && restricted && (
-        <li className='listItem' key={path}>
+        <li className={styles.listItem} key={path}>
           <NavLink
             to={path}
             exact={exact}
-            className='link'
-            activeClassName='activeLink'>
+            className={styles.link}
+            activeClassName={styles.activeLink}>
             {name}
           </NavLink>
         </li>

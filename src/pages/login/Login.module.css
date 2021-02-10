@@ -1,0 +1,27 @@
+.singFragment {
+    width: 30%;
+    display: block;
+    margin: 0 auto;
+}
+.singForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.singForm button {
+    width: 30%;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+}
+.singForm p {
+    margin-bottom: 5px;
+   
+}
+.singInput {
+    margin-bottom: 20px;
+    height: 30px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+}

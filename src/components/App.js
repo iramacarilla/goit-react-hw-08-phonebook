@@ -1,29 +1,24 @@
 
 import React from 'react'
-import authSelectores from '../redux/auth/authSelectores'
-import Navigation from './navigation/Navigation'
-import UserMenu from '../pages/userMenu/UserMenu'
-import { connect } from 'react-redux'
+import AppBar from './appBar/AppBar'
+
 
 
  
-  const App = ({isAuth}) => {
+  const App = () => {
 
 
     return (
       <>
-        <Navigation/>
-      {isAuth && <UserMenu/>}
+      <AppBar/>
+       
+
       </>
     )
 
 }
-const mapStateToProps = state => ({
-  isAuth: authSelectores.isAuth(state)
-})
 
-export default connect(mapStateToProps)(App)
-
+export default App
 
 
 

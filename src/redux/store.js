@@ -8,7 +8,7 @@ const defaultMiddleware = getDefaultMiddleware();
 const authPersistConfig = {
   key:'auth',
   storage,
-  whitelist: ['token']
+  whitelist: ['token', 'user']
 }
 export const store = configureStore({
   reducer: {

@@ -10,11 +10,11 @@ const loginFailure = createAction('auth/loginFailure')
 
 /*const logoutRequest = createAction('auth/logoutRequest')*/
 const logoutSuccess = createAction('auth/logoutSuccess')
-/*const logoutFailure = createAction('auth/logoutFailure')*/
+const logoutFailure = createAction('auth/logoutFailure')
 
-const getCurrentRequest = createAction('auth/getCurrentRequest')
+/*const getCurrentRequest = createAction('auth/getCurrentRequest')
 const getCurrentSuccess = createAction('auth/getCurrentSuccess')
-const getCurrentFailure = createAction('auth/getCurrentFailure')
+const getCurrentFailure = createAction('auth/getCurrentFailure')*/
 
 export default {
 registerRequest,
@@ -25,9 +25,9 @@ loginSuccess,
 loginFailure,
 logoutSuccess,
 /*logoutRequest,
-logoutSuccess,
-logoutFailure,*/
-getCurrentRequest,
+logoutSuccess,*/
+logoutFailure,
+/*getCurrentRequest,
 getCurrentSuccess,
-getCurrentFailure
+getCurrentFailure*/
 }

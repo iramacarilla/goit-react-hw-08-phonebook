@@ -15,6 +15,7 @@ code {
 .title {
   text-align: center;
   color: bisque;
+  
 }
 p,h2, h3 {
   margin: 0;
@@ -33,4 +34,41 @@ p,h2, h3 {
 }
 .navBar {
   display: flex;
+  
+}
+.appBar{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+.userMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.userMenu img {
+  margin-right: 10px;
+}
+.userMenu p {
+  margin-right: 10px;
+  color: antiquewhite;
+}
+
+.userMenu button {
+  border: none;
+    height: 26px;
+    width: 80px;
+    border-radius: 8px;
+    background-color: indianred;
+    color: antiquewhite;
+}
+.homeText {
+  text-align: center;
+  color: floralwhite;
+  font-size: 24px;
+}
+.homeText a {
+  text-decoration: none;
+  color: indianred;
+ 
 }

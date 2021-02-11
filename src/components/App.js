@@ -1,7 +1,11 @@
 
-import React from 'react'
+import React, { Suspense } from 'react'
+import { Switch } from 'react-router-dom';
+import { mainRoutes } from '../routes/mainRoutes';
 import AppBar from './appBar/AppBar'
-
+import Layout from './layOut/LayOut'
+import PublicRoutes from './routes/PublicRoutes';
+import PrivatRoutes from './routes/PrivatRoutes'
 
 
  
@@ -10,13 +14,32 @@ import AppBar from './appBar/AppBar'
 
     return (
       <>
-      <AppBar/>
-       
+      <Layout>
+      <Suspense fallback={<h2>...loading</h2>}>
+        <Switch>
+          {mainRoutes.map((route) =>
+            route.isPrivate ? (
+              <PrivatRoutes    {...route}  key={route.path} />
+            ) : (
+              <PublicRoutes {...route}  key={route.path} />
+            )
+          )}
+        </Switch>
+      </Suspense>
+      </Layout>
+    </>
+  );
+};
 
-      </>
-    )
 
-}
+/*const mapStateToProps = state => ({
+  isAuth: authSelectores.isAuth(state),
+  })
+ 
+  
+  export default connect(mapStateToProps)(Navigation)*/
+
+
 
 export default App
 

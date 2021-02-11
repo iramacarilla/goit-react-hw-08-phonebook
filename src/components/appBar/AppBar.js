@@ -1,12 +1,12 @@
 import React from 'react'
 import authSelectores from '../../redux/auth/authSelectores'
 import Navigation from '../navigation/Navigation'
-import UserMenu from '../../pages/userMenu/UserMenu'
+import UserMenu from '../userMenu/UserMenu'
 import { connect } from 'react-redux'
 
 const AppBar = ({isAuth}) => {
     return (
-        <div >
+        <div className='appBar' >
            <Navigation/> 
            {isAuth && <UserMenu/>}
         </div>

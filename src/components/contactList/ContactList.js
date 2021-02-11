@@ -41,7 +41,7 @@ const mapDispatchToProps = (dispatch) => {
 
 ContactList.propTypes = {
 	contacts: PropTypes.array.isRequired,
-	onDelete: PropTypes.func.isRequired
+	/*onDelete: PropTypes.func.isRequired*/
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ContactList);
 

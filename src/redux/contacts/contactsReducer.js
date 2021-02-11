@@ -38,21 +38,13 @@ const loading = createReducer(false,  {
 })
 
 const error = createReducer(null,  {
-  [addContactFailure]: (state, {payload}) =>
-  { 
-return error ? payload : null
-},
+  [addContactFailure]: (_, { payload }) => payload.message,
  
 
-  [getAllContactsFailure]:  (state, {payload}) =>
-  { 
-return error ? payload : null
-},
+ [getAllContactsFailure]:  (_, { payload }) => payload.message,
+ 
 
-  [deleteContactFailure]: (state, {payload}) =>
-  { 
-return error ? payload : null
-},
+  [deleteContactFailure]:(_, { payload }) => payload.message,
 })
 
 const filter = createReducer('',  {

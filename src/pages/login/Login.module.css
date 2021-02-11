@@ -13,6 +13,9 @@
     height: 30px;
     border: none;
     border-radius: 8px;
+    background-color: indianred;
+    color: white;
+    font-size: 14px;
 }
 .singForm p {
     margin-bottom: 5px;
@@ -20,8 +23,9 @@
 }
 .singInput {
     margin-bottom: 20px;
+    padding-left: 15px;
     height: 30px;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 8px;
     border: none;
 }

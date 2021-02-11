@@ -10,7 +10,7 @@ import Notification from '../../components/notification/Notification'
 import Logo from '../logo/Logo'
 import Filter from '../filter/Filter'
 import ContactList from '../contactList/ContactList'
-import UserMenu from '../../pages/userMenu/UserMenu'
+import UserMenu from '../userMenu/UserMenu'
 
 
 const initialState = {

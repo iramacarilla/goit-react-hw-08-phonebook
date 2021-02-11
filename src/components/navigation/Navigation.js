@@ -18,17 +18,7 @@ const Navigation = () => {
           <NavigationItem {...route}  key={route.path} />
         ))}
       </ul>
-      <Suspense fallback={<h2>...loading</h2>}>
-        <Switch>
-          {mainRoutes.map((route) =>
-            route.isPrivate ? (
-              <PrivateRoute {...route}  key={route.path} />
-            ) : (
-              <PublicRoute {...route}  key={route.path} />
-            )
-          )}
-        </Switch>
-      </Suspense>
+      
     </>
   );
 };

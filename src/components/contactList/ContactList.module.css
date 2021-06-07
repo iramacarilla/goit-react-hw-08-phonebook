@@ -1,70 +1,80 @@
 .contactList {
-    
-    margin: 0 auto;
-    margin-top: 40px;
-    width: 90%;
-    padding: 30px;
-    height: auto;
- 
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 90%;
+  padding: 30px;
+  height: auto;
 }
 .contactList h2 {
-    text-align: center;
-    color: #ffffff;
+  text-align: center;
+  color: #0f0d0d;
 }
 .contactData {
-    width: 95%;
-    padding: 0;
-    display: block;
-    margin: 0 auto;
-    list-style: none;
-    /*display: flex;
+  width: 80%;
+  padding: 0 10px;
+  display: block;
+  margin: 0 auto;
+  list-style: none;
+  /*display: flex;
     flex-wrap: wrap;
     justify-content: center;*/
 }
 .contactData li {
-    display: flex;
-    
-    justify-content: space-between;
-    border-radius: 10px;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 5px 5px; 
-    border: white solid 0.01px;
-   
+  display: flex;
+  background: #e8e7e7;
+  justify-content: space-between;
+  border-radius: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px 15px;
+  border: white solid 0.01px;
 }
-.contactData p { 
-    font-size: 16px;
-    color: white;
-    
-    
+
+.contactData p {
+  font-size: 18px;
+  color: black;
+  display: flex;
+  flex: 1 1 0;
 }
-.contactData button { 
-    display: block;
-    padding: 5px 20px;
-    border: none;
-    font-size: 18px;
-    border-radius: 8px;
-    background-color: darksalmon;
-    color: white;
+.contactData button {
+  display: block;
+  padding: 5px 20px;
+  border: none;
+  font-size: 18px;
+  border-radius: 8px;
+  background-color: transparent;
+  color: rgb(104, 83, 66);
+}
+.contactListTop {
+  display: flex;
+  margin-left: 25px;
+}
+.contactListTop p:first-child {
+  display: flex;
+  flex: 0.5 1 0;
+}
+.contactListTop p:nth-child(2) {
+  display: flex;
+  flex: 1 1 0;
 }
 .enter {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  
-  .enterActive {
-    opacity: 1;
-    transform: translateX(0);
-    transition: all 250ms ease-in-out;
-  }
-  
-  .exit {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  
-  .exitActive {
-    opacity: 0;
-    transform: translateX(200%);
-    transition: all 250ms ease-in-out;
-  }
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.enterActive {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 250ms ease-in-out;
+}
+
+.exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.exitActive {
+  opacity: 0;
+  transform: translateX(200%);
+  transition: all 250ms ease-in-out;
+}

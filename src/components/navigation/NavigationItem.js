@@ -1,33 +1,43 @@
 import React from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import authSelectores from '../../redux/auth/authSelectores'
-import styles from './Navigation.module.css'
+import authSelectores from "../../redux/auth/authSelectores";
+import styles from "./Navigation.module.css";
 
-const NavigationItem = ({ isAuth, path, name, exact, isPrivate, restricted }) => {
-
-    return (
-      
+const NavigationItem = ({
+  isAuth,
+  path,
+  name,
+  exact,
+  isPrivate,
+  restricted,
+}) => {
+  return (
     <>
       {!isPrivate && !restricted && (
-        <li className={styles.listItem} key={path}>
+        <li
+          className={isAuth ? styles.listItemHome : styles.listItem}
+          key={path}
+        >
           <NavLink
             to={path}
             exact={exact}
             className={styles.link}
-            activeClassName={styles.activeLink}>
+            activeClassName={styles.activeLink}
+          >
             {name}
           </NavLink>
         </li>
       )}
 
       {isAuth && isPrivate && !restricted && (
-        <li className={styles.listItem} key={path}>
+        <li className={styles.listItemKey} key={path}>
           <NavLink
             to={path}
             exact={exact}
             className={styles.link}
-            activeClassName={styles.activeLink}>
+            activeClassName={styles.activeLink}
+          >
             {name}
           </NavLink>
         </li>
@@ -39,7 +49,8 @@ const NavigationItem = ({ isAuth, path, name, exact, isPrivate, restricted }) =>
             to={path}
             exact={exact}
             className={styles.link}
-            activeClassName={styles.activeLink}>
+            activeClassName={styles.activeLink}
+          >
             {name}
           </NavLink>
         </li>
@@ -47,9 +58,8 @@ const NavigationItem = ({ isAuth, path, name, exact, isPrivate, restricted }) =>
     </>
   );
 };
-const mapStateToProps = state => ({
-    isAuth: authSelectores.isAuth(state)
-  })
-   
-    
-    export default connect(mapStateToProps)(NavigationItem)
+const mapStateToProps = (state) => ({
+  isAuth: authSelectores.isAuth(state),
+});
+
+export default connect(mapStateToProps)(NavigationItem);

@@ -1,17 +1,25 @@
 .navMenu {
-    list-style: none;
-    display: flex;
+  list-style: none;
+  display: flex;
+
+  flex: 1 1 0;
 }
-.listItem  {
-    margin-right: 15px;
-    
+.listItem:first-child {
+  display: flex;
+  flex: 1 1 0;
 }
-.link  {
-    text-decoration: none;
-    color: bisque;
-    font-size: 18px;
-    font-weight: 500;
+.listItem {
+  margin-left: 15px;
+}
+.listItemHome {
+  margin-right: 15px;
+}
+.link {
+  text-decoration: none;
+  color: #524b43;
+  font-size: 18px;
+  font-weight: 500;
 }
 .activeLink {
-    color: indianred;
+  color: rgb(202, 145, 80);
 }

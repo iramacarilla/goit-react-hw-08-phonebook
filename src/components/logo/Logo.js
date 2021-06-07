@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Logo = () => {
-    return (
-        <h2 className='title'>
-            PHONEBOOK
-        </h2>
-    )
-}
+  return <p className="title"></p>;
+};
 
-export default Logo
+export default Logo;

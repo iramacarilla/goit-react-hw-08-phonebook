@@ -9,8 +9,8 @@ const registerOperation = (user) => async (dispatch) => {
         returnSecureToken: true,
       });
       dispatch(authAction.registerSuccess(response.data));
-    } catch (error) {
-      dispatch(authAction.registerFailure(error));
+    } catch (error) { 
+      dispatch(authAction.registerFailure(error.response.data.error.message));
     } finally {
       dispatch(authAction.registerRequest());
     }
@@ -25,14 +25,20 @@ const registerOperation = (user) => async (dispatch) => {
         returnSecureToken: true,
       }); 
       dispatch(authAction.loginSuccess(response.data));
-    } catch (error) {
-      dispatch(authAction.loginFailure(error));
+    } catch (error) { 
+      dispatch(authAction.loginFailure(error.response.data.error.message));
     } finally {
       dispatch(authAction.loginRequest());
     }
   };
-
-
+ 
+  const refreshRequest = (getState) => {
+    const refreshToken = getState().auth.refreshToken
+    axios.post(
+      process.env.REACT_APP_REFRESH_URL,
+      { grant_type: "refresh_token", refresh_token: refreshToken }
+    );
+  };
 
   
 /*const registerOperation = userData => dispatch => {
@@ -61,4 +67,4 @@ const loginOperation = userData => dispatch => {
 
 
 
-export default {registerOperation, loginOperation}
+export default {registerOperation, loginOperation, refreshRequest}

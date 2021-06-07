@@ -6,6 +6,10 @@ export const addContactRequest = createAction('contacts/addRequest')
 export const addContactSuccess = createAction('contacts/addSuccess')
 export const addContactFailure = createAction('contacts/addFailure')
 
+export const updateContactRequest = createAction('contacts/addRequest')
+export const updateContactSuccess = createAction('contacts/addSuccess')
+export const updateContactFailure = createAction('contacts/addFailure')
+
 export const getAllContactsRequest = createAction('contacts/getRequest')
 export const getAllContactsSuccess = createAction('contacts/getSuccess')
 export const getAllContactsFailure = createAction('contacts/getFailure')

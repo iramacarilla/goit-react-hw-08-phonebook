@@ -1,36 +1,30 @@
+import React, { Suspense } from "react";
+import { Switch } from "react-router-dom";
+import { mainRoutes } from "../routes/mainRoutes";
+import AppBar from "./appBar/AppBar";
+import Layout from "./layOut/LayOut";
+import PublicRoutes from "./routes/PublicRoutes";
+import PrivatRoutes from "./routes/PrivatRoutes";
 
-import React, { Suspense } from 'react'
-import { Switch } from 'react-router-dom';
-import { mainRoutes } from '../routes/mainRoutes';
-import AppBar from './appBar/AppBar'
-import Layout from './layOut/LayOut'
-import PublicRoutes from './routes/PublicRoutes';
-import PrivatRoutes from './routes/PrivatRoutes'
-
-
- 
-  const App = () => {
-
-
-    return (
-      <>
+const App = () => {
+  return (
+    <>
       <Layout>
-      <Suspense fallback={<h2>...loading</h2>}>
-        <Switch>
-          {mainRoutes.map((route) =>
-            route.isPrivate ? (
-              <PrivatRoutes    {...route}  key={route.path} />
-            ) : (
-              <PublicRoutes {...route}  key={route.path} />
-            )
-          )}
-        </Switch>
-      </Suspense>
+        <Suspense fallback={<h2>...loading</h2>}>
+          <Switch>
+            {mainRoutes.map((route) =>
+              route.isPrivate ? (
+                <PrivatRoutes {...route} key={route.path} />
+              ) : (
+                <PublicRoutes {...route} key={route.path} />
+              )
+            )}
+          </Switch>
+        </Suspense>
       </Layout>
     </>
   );
 };
-
 
 /*const mapStateToProps = state => ({
   isAuth: authSelectores.isAuth(state),
@@ -39,19 +33,9 @@ import PrivatRoutes from './routes/PrivatRoutes'
   
   export default connect(mapStateToProps)(Navigation)*/
 
-
-
-export default App
-
-
+export default App;
 
 ///////////////////////////////////////////////////
-
-
-
-
-
-
 
 /*import React, { Component } from 'react'
 import { v4 as uuidv4 } from "uuid";

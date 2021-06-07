@@ -1,20 +1,23 @@
-import React from 'react'
-import styles from './Notification.module.css'
-import { CSSTransition } from 'react-transition-group'
+import React from "react";
+import styles from "./Notification.module.css";
+import { CSSTransition } from "react-transition-group";
 
-const Notification = ({isVisible, message}) => {
-    return (
-        <CSSTransition
-        in={isVisible}
-        timeout = {250}
-        classNames={styles}
-        unmountOnExit>
-        <div className={styles.notification} >
-        {message}
-        </div>
-        </CSSTransition>
-        
-    )
-}
+const Notification = ({ isVisible, message, onClose }) => {
+  return (
+    <CSSTransition
+      in={isVisible}
+      timeout={250}
+      classNames={styles}
+      unmountOnExit
+    >
+      <div className={styles.notification}>
+        <button type="button" onClick={onClose}>
+          x
+        </button>
+        <p> {message} </p>
+      </div>
+    </CSSTransition>
+  );
+};
 
-export default Notification
+export default Notification;

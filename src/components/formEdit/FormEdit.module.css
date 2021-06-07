@@ -1,0 +1,26 @@
+.editWraper {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+.editWraper input {
+  width: 80%;
+  height: 40px;
+  padding-left: 10px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  border: 1px solid #c0a88b;
+}
+.editWraper button {
+  width: 85%;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: rgb(202, 145, 80);
+  font-size: 16px;
+}

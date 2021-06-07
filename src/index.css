@@ -1,30 +1,34 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #87b2b2;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 .title {
   text-align: center;
-  color: bisque;
-  
+  color: #81715f;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 50px;
+  padding: 0 130px;
 }
-p,h2, h3 {
+p,
+h2,
+h3 {
   margin: 0;
   padding: 0;
 }
 .layout {
   padding: 30px 0;
   border: wheat solid 1px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   width: 50%;
   display: block;
   margin: 0 auto;
@@ -34,12 +38,13 @@ p,h2, h3 {
 }
 .navBar {
   display: flex;
-  
 }
-.appBar{
+.appBar {
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 50px;
+  /*justify-content: space-around;*/
+  min-width: 320px;
+  padding: 0 180px;
+  margin-bottom: 100px;
 }
 .userMenu {
   display: flex;
@@ -51,24 +56,33 @@ p,h2, h3 {
 }
 .userMenu p {
   margin-right: 10px;
-  color: antiquewhite;
+  color: #7d613c;
 }
 
 .userMenu button {
   border: none;
-    height: 26px;
-    width: 80px;
-    border-radius: 8px;
-    background-color: indianred;
-    color: antiquewhite;
+  height: 26px;
+  width: 60px;
+  border-radius: 5px;
+  background-color: rgb(202, 145, 80);
+  color: antiquewhite;
+}
+.homePage {
+  padding: 0 200px;
 }
 .homeText {
-  text-align: center;
-  color: floralwhite;
-  font-size: 24px;
+  color: #2f291c;
+  font-size: 18px;
 }
 .homeText a {
   text-decoration: none;
   color: indianred;
- 
+  margin-left: 10px;
+}
+.contact {
+  display: flex;
+  flex: 1 1 0;
+}
+.deleteBtn {
+  margin-right: 10px;
 }

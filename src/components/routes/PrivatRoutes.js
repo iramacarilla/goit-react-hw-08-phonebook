@@ -7,13 +7,11 @@ const PrivateRoute = ({ path, exact, component, isAuth }) => {
   return isAuth ? (
     <Route path={path} exact={exact} component={component} />
   ) : (
-    <Redirect to='/login' />
+    <Redirect to="/login" />
   );
 };
-const mapStateToProps = state => ({
-    isAuth: authSelectores.isAuth(state),
-    })
-   
-    
-    export default connect(mapStateToProps)(PrivateRoute)
+const mapStateToProps = (state) => ({
+  isAuth: authSelectores.isAuth(state),
+});
 
+export default connect(mapStateToProps)(PrivateRoute);

@@ -1,29 +1,38 @@
-import { createReducer } from '@reduxjs/toolkit';
-import {combineReducers} from 'redux'
-import { getFilter,  addContactSuccess, addContactFailure, addContactRequest, getAllContactsRequest,
-   getAllContactsSuccess, getAllContactsFailure, deleteContactSuccess, deleteContactFailure, deleteContactRequest, updateContactSuccess, 
-   } from './contactsAction'
+import { createReducer } from "@reduxjs/toolkit";
+import { combineReducers } from "redux";
+import authAction from "../auth/authAction";
+import {
+  getFilter,
+  addContactSuccess,
+  addContactFailure,
+  addContactRequest,
+  getAllContactsRequest,
+  getAllContactsSuccess,
+  getAllContactsFailure,
+  deleteContactSuccess,
+  deleteContactFailure,
+  deleteContactRequest,
+  updateContactSuccess,
+} from "./contactsAction";
 
-
-const items = createReducer ([], {
-[addContactSuccess]: (state, action) =>
-   { 
-return [...state, action.payload]
-},
-[getAllContactsSuccess]: (_, action) => action.payload
-   
-/*return [...action.payload]*/
-
-,
-[deleteContactSuccess]: (state, action) =>{
-return state.filter(item=> item.id !== action.payload)
-},
-[updateContactSuccess]: (state, {payload}) =>{
-  return state.map(item=> item.id === payload.id ? {...payload} : item)
+const items = createReducer([], {
+  [addContactSuccess]: (state, action) => {
+    return [...state, action.payload];
   },
+  [getAllContactsSuccess]: (_, action) => action.payload,
 
-})
-const loading = createReducer(false,  {
+  /*return [...action.payload]*/
+
+  [deleteContactSuccess]: (state, action) => {
+    return state.filter((item) => item.id !== action.payload);
+  },
+  [updateContactSuccess]: (state, { payload }) => {
+    return state.map((item) =>
+      item.id === payload.id ? { ...payload } : item
+    );
+  },
+});
+const loading = createReducer(false, {
   [addContactRequest]: () => true,
   [addContactSuccess]: () => false,
   [addContactFailure]: () => false,
@@ -35,44 +44,35 @@ const loading = createReducer(false,  {
   [deleteContactRequest]: () => true,
   [deleteContactSuccess]: () => false,
   [deleteContactFailure]: () => false,
+});
 
-  
+const error = createReducer(null, {
+  [addContactFailure]: (_, { payload }) => payload,
 
-})
+  [getAllContactsFailure]: (_, { payload }) => payload,
 
-const error = createReducer(null,  {
-  [addContactFailure]: (_, { payload }) => payload.message,
- 
+  [deleteContactFailure]: (_, { payload }) => payload,
 
- [getAllContactsFailure]:  (_, { payload }) => payload.message,
- 
+  [authAction.logoutSuccess]: (_, { payload }) => {
+    return null;
+  },
+});
 
-  [deleteContactFailure]:(_, { payload }) => payload.message,
-})
-
-const filter = createReducer('',  {
-    [getFilter]: (_, action) =>
-     {return action.payload}
-       
-})
+const filter = createReducer("", {
+  [getFilter]: (_, action) => {
+    return action.payload;
+  },
+});
 
 export default combineReducers({
-    items: items,
-    
-    loading: loading,
-    filter: filter,
-    error: error
-  
-  
-})
+  items: items,
 
-
-
-
-
+  loading: loading,
+  filter: filter,
+  error: error,
+});
 
 ///////////////////////////////////////////////////////
-
 
 /*import {combineReducers} from 'redux'
 import actionsTypes from './contactsActionsTypes'
@@ -83,15 +83,15 @@ const items = (state=[], {type, payload}) => {
             /*if (localStorage.getItem('contacts')) ({
                  [...state, JSON.parse(localStorage.getItem('contacts'))],
                 })*/
-            
-           /*if (
+
+/*if (
                 state.some(
                   (item) => item.name === payload.name
                 )
               ) {
                 return  [...state]/*, (state.contacts.alert: !state.contacts.alert)}*/
-              /*}else*/
-           /* return [...state, payload];
+/*}else*/
+/* return [...state, payload];
         case actionsTypes.DELETE_CONTACT:
             return  state.filter(item=> item.id !== payload.id); 
         default:
@@ -120,7 +120,7 @@ const filter = (state='', {type, payload}) => {
 /*export default combineReducers({
     items: items,
    /* alert: alert,*/
-    /*filter: filter,
+/*filter: filter,
   
 })
 

@@ -43,7 +43,7 @@ h3 {
   display: flex;
   /*justify-content: space-around;*/
   min-width: 320px;
-  padding: 0 180px;
+  padding: 0 100px;
   margin-bottom: 100px;
 }
 .userMenu {
@@ -52,7 +52,7 @@ h3 {
   align-items: center;
 }
 .userMenu img {
-  margin-right: 10px;
+  margin-right: 30px;
 }
 .userMenu p {
   margin-right: 10px;
@@ -69,14 +69,21 @@ h3 {
 }
 .homePage {
   padding: 0 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .homeText {
   color: #2f291c;
   font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
 }
-.homeText a {
+.homePage a {
   text-decoration: none;
-  color: indianred;
+  font-size: 22px;
+  color: rgb(192, 100, 14);
   margin-left: 10px;
 }
 .contact {

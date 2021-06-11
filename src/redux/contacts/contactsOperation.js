@@ -37,7 +37,9 @@ const getAllContactsOperation = () => (dispatch, getState) => {
     })
     /*.then((response)=> 
     {if (response.data) { dispatch(getAllContactsSuccess(Object.keys(response.data).map(key=>({...response.data[key], id: key }))))} else {[]}} )*/
-    .catch((error) => dispatch(getAllContactsFailure(error)));
+    .catch((error) =>
+      dispatch(getAllContactsFailure(error.response.data.error))
+    );
 };
 const addContactOperation = (contact) => (dispatch, getState) => {
   const idToken = getState().auth.token;
@@ -57,7 +59,7 @@ const addContactOperation = (contact) => (dispatch, getState) => {
     )
     .then(() => dispatch(getAllContactsOperation()))
 
-    .catch((error) => dispatch(addContactFailure(error)));
+    .catch((error) => dispatch(addContactFailure(error.response.data.error)));
 };
 const deleteContactOperation = (id) => (dispatch, getState) => {
   const idToken = getState().auth.token;
@@ -70,7 +72,9 @@ const deleteContactOperation = (id) => (dispatch, getState) => {
     )
     //axios.delete(`https://goit-react-hw-07-phonebo-9e664-default-rtdb.firebaseio.com/contact/${id}.json`)
     .then(() => dispatch(deleteContactSuccess(id)))
-    .catch((error) => dispatch(deleteContactFailure(error)));
+    .catch((error) =>
+      dispatch(deleteContactFailure(error.response.data.error))
+    );
 };
 
 const updateContactOperation = (newContact) => (dispatch, getState) => {
@@ -84,7 +88,9 @@ const updateContactOperation = (newContact) => (dispatch, getState) => {
       newContact
     )
     .then((response) => dispatch(updateContactSuccess(newContact)))
-    .catch((error) => dispatch(updateContactFailure(error)));
+    .catch((error) =>
+      dispatch(updateContactFailure(error.response.data.error))
+    );
 };
 
 export {

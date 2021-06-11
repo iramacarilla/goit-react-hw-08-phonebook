@@ -1,12 +1,27 @@
-import React, { Suspense } from "react";
-import { Switch } from "react-router-dom";
+import React, { Suspense, useEffect } from "react";
+import { Switch, useHistory } from "react-router-dom";
 import { mainRoutes } from "../routes/mainRoutes";
 import AppBar from "./appBar/AppBar";
 import Layout from "./layOut/LayOut";
 import PublicRoutes from "./routes/PublicRoutes";
 import PrivatRoutes from "./routes/PrivatRoutes";
+import { useDispatch, useSelector } from "react-redux";
+import authAction from "../redux/auth/authAction";
 
 const App = () => {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const error = useSelector((state) => state.contacts.error);
+  let token = useSelector((state) => state.auth.token);
+
+  useEffect(() => {
+    if (error === "Auth token is expired") {
+      //console.log("token", token);
+      dispatch(authAction.logoutSuccess());
+      //token = null;
+      //history.push("/");
+    }
+  }, [error]);
   return (
     <>
       <Layout>

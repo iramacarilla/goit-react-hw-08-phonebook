@@ -7,10 +7,10 @@ const Home = ({ isAuth }) => {
   return (
     <div className="homePage">
       <p className="homeText">
-        Here you can create your own phonebook. Add new contacts and be in touch
-        with your keep in touch with your loved ones
-        {!isAuth && <Link to="/register">sing up</Link>}
+        Here you can create your own phonebook. Add new contacts and keep in
+        touch with your loved ones
       </p>
+      {!isAuth && <Link to="/register">Sign Up</Link>}
     </div>
   );
 };

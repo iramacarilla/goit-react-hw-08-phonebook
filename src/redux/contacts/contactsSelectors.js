@@ -3,6 +3,7 @@ import { createSelector } from "@reduxjs/toolkit";
 const getLoading = (state) => state.contacts.loading;
 const getItems = (state) => state.contacts.items;
 const getValue = (state) => state.contacts?.filter;
+const getError = (state) => state.contacts?.error;
 
 const getFilteredContacts = createSelector(
   [getItems, getValue],
@@ -19,4 +20,10 @@ const getFilteredContacts = createSelector(
 return contacts.filter(contact => contact.name.toLowerCase().includes(filter))
 }*/
 
-export default { getLoading, getItems, getValue, getFilteredContacts };
+export default {
+  getLoading,
+  getItems,
+  getValue,
+  getFilteredContacts,
+  getError,
+};

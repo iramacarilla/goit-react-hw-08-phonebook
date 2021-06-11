@@ -24,11 +24,14 @@ const FormEdit = ({
     e.preventDefault();
     setFormEditOpen(false);
     const id = e.target.dataset.id;
-    console.log(state);
+    //console.log(state);
     onUpdate(state);
   };
+  const onCloseModal = () => {
+    setFormEditOpen(false);
+  };
   return (
-    <Modal>
+    <Modal closeModal={onCloseModal}>
       <form onSubmit={onClose} className={styles.editWraper}>
         <input
           type="text"

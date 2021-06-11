@@ -29,7 +29,6 @@ export class Login extends Component {
         {this.props.error && (
           <Notification
             isVisible={this.state.isVisible}
-            onClose={() => this.setState({ isVisible: false })}
             message={this.props.error}
           />
         )}
@@ -74,3 +73,5 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
+
+/*  onClose={() => this.setState({ isVisible: false })}*/

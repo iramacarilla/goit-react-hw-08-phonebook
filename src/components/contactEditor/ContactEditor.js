@@ -22,6 +22,9 @@ const initialState = {
 };
 
 class ContactEditor extends Component {
+  constructor(props) {
+    super(props);
+  }
   state = {
     ...initialState,
     isVisible: false,
@@ -29,14 +32,8 @@ class ContactEditor extends Component {
     isFormEditOpen: false,
     editedUser: {},
   };
-
-  /*state = { ...initialState };
-  state = { isVisible: true, message: "" };
-  state = { isFormEditOpen: false };
-  state = { editedUser: {} };*/
   componentDidMount() {
     this.props.getContacts();
-    /*{this.props.isAuh && this.props.getContacts()}*/
   }
 
   onHandelChange = (e) => {
@@ -72,7 +69,10 @@ class ContactEditor extends Component {
       setTimeout(() => this.setState({ isVisible: false }), 3000);
       this.setState({ ...initialState });
     } else {
-      this.props.onAddForm(this.state);
+      this.props.onAddForm({
+        name: this.state.name,
+        number: this.state.number,
+      });
       this.setState({ ...initialState });
     }
   };
@@ -156,59 +156,3 @@ const mapDispatchToProps = {
 
 export default connect(mapPropsToState, mapDispatchToProps)(ContactEditor);
 
-////////////////////////////////////////////////////////////////
-
-/*import React, { useState } from 'react'
-import { CSSTransition } from 'react-transition-group'
-import {connect} from 'react-redux'
-import ContactEditorElement from '../contactEditorElement/ContactEditorElement'
-import Logo from '../logo/Logo'
-import styles from '../contactEditor/ContactEditor.module.css'
-import contactsAction from '../../redux/contacts/contactsAction'
-
-const initialState = {
-  name: '',
-  number: '',
-}
-
-const ContactEditor = ({onAddForm}) => {
-
-const[state, setState] = useState({...initialState})  
-
-    const onHandelChange = (e) => {
-        const {name} = e.target
-        setState({...state, [name]: e.target.value})
-      }
-      
-  const  handelSubmit = (e) => {
-    e.preventDefault();
-    
-   onAddForm({name: state.name, number: state.number})
-    setState({...initialState})
-    }
-    
-  
-        return (
-          <div className={styles.phoneBook}>
-          <CSSTransition
-           in={true}
-           appear={true}
-           classNames={styles}
-           timeout={500}
-           unmountOnExit
-           > 
-           <Logo/>
-           </CSSTransition>
-          <ContactEditorElement name={state.name} number={state.number} 
-          onChange={handelSubmit} onHandelChange={onHandelChange}/>
-            </div>   
-        )
-    
-}*/
-
-/*const mapDispatchToProps = dispatch => {
-  return {
-    onAddForm: (name, number) => dispatch(contactsAction.addContact(name, number))
-  }
-
-}*/

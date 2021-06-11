@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Notification.module.css";
 import { CSSTransition } from "react-transition-group";
 
-const Notification = ({ isVisible, message, onClose }) => {
+const Notification = ({ isVisible, message }) => {
   return (
     <CSSTransition
       in={isVisible}
@@ -11,9 +11,6 @@ const Notification = ({ isVisible, message, onClose }) => {
       unmountOnExit
     >
       <div className={styles.notification}>
-        <button type="button" onClick={onClose}>
-          x
-        </button>
         <p> {message} </p>
       </div>
     </CSSTransition>

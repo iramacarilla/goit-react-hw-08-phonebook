@@ -5,7 +5,6 @@ import UserMenu from "../userMenu/UserMenu";
 import { connect } from "react-redux";
 
 const AppBar = ({ isAuth }) => {
-  //const isAuth = useSelector((state) => state.auth.isAuth);
   return (
     <div className="appBar">
       <Navigation />

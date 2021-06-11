@@ -9,25 +9,24 @@ import {
   deleteContactOperation,
   updateContactOperation,
 } from "../../redux/contacts/contactsOperation";
-import FormEdit from "../formEdit/FormEdit";
 
 const ContactList = ({
   contacts,
   deleteContact,
   setFormEditOpen,
-  isFormEditOpen,
-  user,
+  //isFormEditOpen,
+  // user,
   getUserById,
 }) => {
   const onHandleDelete = (e) => {
     const id = e.target.dataset.id;
     deleteContact(id);
   };
+
   const onOpen = (e) => {
     setFormEditOpen(true);
     const id = e.target.dataset.id;
     updateContactOperation(id);
-    console.log("edit", id);
     getUserById(id);
   };
   return (
@@ -67,11 +66,5 @@ const mapDispatchToProps = (dispatch) => {
 
 ContactList.propTypes = {
   contacts: PropTypes.array.isRequired,
-  /*onDelete: PropTypes.func.isRequired*/
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ContactList);
-
-/*<div className={styles.contactListTop}>
-          <p>Name</p>
-          <p>Telephone Number</p>
-        </div>*/
